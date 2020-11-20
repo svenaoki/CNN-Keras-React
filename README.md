@@ -1,6 +1,16 @@
 # Predicting Cats and Dogs using convolutional neural networks
 
 ## What this repo is about?
+
+This repo originated from the objective to create a CNN using Keras and hosting it on Flask.
+This is exactly the same frontend and approach like my other repo (ImageRecognition-PyTorch-React-Flask) with the only difference of Keras instead of PyTorch. The intention was to compare the implementation between the two. Because I do not want you to switch forth and back between the repos to read the README.md, I copy and paste the description below with a few adjustments:
+
+As I would not like the idea of creating the frontend with Flask as well and HTML only, I linked the model to a ReactJS app.
+People who would like to use the repo should therefore know a little bit of Javascript.
+
+Since this is just a fun project, I do not intend to spend much time on it - maybe a couple of evening so roughly 5-6 hours.
+Also I did not include a requirement.txt (it is basically tensorflow that you need to install and flask, flask-cors) and I won't go into detail how to run a JS application such as React (it boils down to install node js, npm install, npm start anyway).
+
 ```
 ├── backend/
 │   ├── app.py
@@ -20,25 +30,19 @@
     │       ├── Upload.js
     │       └── Upload.css
     └── public/
-        ├── content.md
-        ├── meta.json
-        ├── image.png
-        ├── image.jpg
-        ├── image.jpeg
-        └── document.pdf
+        ├── index.html
+        ├── ...
+        └── manifest.json
 ```
 
-In the backend folder are the python scripts containing two CNNs, one from scratch one from transfer learning, and app.py where the flask application creates and API endpoint to the model.
-In the frontend folder is the react js application which allows us to upload picture and run the CNN as per the pictures below.
+In the backend folder are the python scripts containing two CNNs. One built from scratch, one built from transfer learning using ResNet. The weights, which are also included, are calculated using GPU support on google colab. The Flask application is found in /backend/app.py where the application creates an API endpoint (port 5000) for predictions.
+
+In the frontend folder is the ReactJS app which allows us to upload a picture, send it to the server and run the CNN.
 
 Click on "Choose file" and upload your cat or dog image
 
 <img src = "/docs/FrontEndtool.png">
 
-Click on "Run CNN" to request probabilities on whether it is a dog or a cat 
-(This prediction was created when the model wasn't trained, but neverthelesss I found it amusing and left it)
+Click on "Run CNN" to request probabilities on whether it is a dog or a cat
 
 <img src = "/docs/FrontEndtool2.png">
-
-
-

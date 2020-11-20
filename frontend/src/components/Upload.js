@@ -37,7 +37,7 @@ const Upload = () => {
         },
       })
       .then((res) => {
-        setPredDog(res.data[1]);
+        setPredDog(1 - res.data[0]);
         setPredCat(res.data[0]);
         setLoading(false);
       })
